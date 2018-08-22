@@ -1,0 +1,26 @@
+#filter odd numbers in an array
+
+public class CheckRemoveEven {
+
+	public static int[] removeEven(int[] arr){
+		
+		int oddElements = 0;
+		
+		for(int i=0; i<arr.length; i++){
+			if (arr[i] %2 != 0){
+				oddElements++;
+			}
+		}
+		
+		int[] resultArray = new int[oddElements];
+		int resultIndex = 0;
+		for(int num : arr){
+			if (num%2 != 0){
+				resultArray[resultIndex] = num;
+				resultIndex++;
+			}
+		}
+		return resultArray;		
+	}
+}
+
