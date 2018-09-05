@@ -1,0 +1,34 @@
+//Extract different caregories from the given string
+
+
+public class LoopsWorking {
+
+	public static void main(String[] args) {
+		String str = "We have a large inventory of things in our wearhouse falling in" +
+					 "the category:apparrel and the slightly more in demand"+
+					 "category:makeup along with the category:furniture ...";
+		
+		printCategories(str);
+	}
+	
+	
+	/*
+	 * Extract all categories from the string argument
+	 */
+	public static void printCategories(String str){
+		int i = 0;
+		while(true){
+		int found = str.indexOf("category:", i);
+		if (found == -1) break;
+		
+		int startToPrintIndex = found+9;
+		int endPrintIndex = str.indexOf(" ", startToPrintIndex);
+		
+		System.out.println(str.substring(startToPrintIndex, endPrintIndex));
+		
+		i = endPrintIndex+1;
+		}
+		
+	}
+
+}
